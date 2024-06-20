@@ -19,7 +19,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin:["https://pro-links-frontend.vercel.app/"],
+		origin:[
+			"http://localhost:3000",
+			"https://pro-links-frontend.vercel.app/"
+		],
 		credentials:true,
 	})
 );
