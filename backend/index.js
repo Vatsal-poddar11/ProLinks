@@ -19,7 +19,7 @@ const allowedOrigins = [
 	'http://localhost:3000',  
 	'https://pro-links.vercel.app/',
 	'https://pro-links-git-main-vatsal-poddars-projects.vercel.app/',  
-	'https://pro-links-bwzica3e3-vatsal-poddars-projects.vercel.app/'
+	'https://pro-links-4yx8li0lx-vatsal-poddars-projects.vercel.app/'
 ];
 
 // CORS configuration
