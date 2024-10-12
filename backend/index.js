@@ -30,7 +30,6 @@ const corsOptions = {
 		}
 		return callback(null, true);
 	},
-	methods: ['GET', 'POST', 'PUT', 'DELETE'],
 	credentials: true,  // Allow credentials (cookies, authorization headers, etc.)
 	optionsSuccessStatus: 200  // To handle legacy browsers that choke on 204 responses
 };
