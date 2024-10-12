@@ -15,53 +15,46 @@ const PORT = process.env.PORT || 4000;
 
 database.connect();
 
-app.use(express.json());
-app.use(cookieParser());
-// app.use(
-// 	cors({
-// 		origin:[
-// 			"http://localhost:3000",
-// 			"https://pro-links-frontend.vercel.app"
-// 		],
-// 		credentials:true,
-// 	})
-// );
-
 const allowedOrigins = [
-	'http://localhost:3000',
-	'https://pro-links-frontend.vercel.app'
+	'http://localhost:3000',  
+	'https://pro-links-frontend.vercel.app',  
+	'https://pro-links-frontend-7i0ducup1-vatsal-poddars-projects.vercel.app'
 ];
 
+// CORS configuration
 const corsOptions = {
 	origin: function (origin, callback) {
-		if (!origin) return callback(null, true); // Allow requests with no origin (like mobile apps, curl requests)
+		if (!origin) return callback(null, true);  // Allow requests with no origin (like Postman, curl)
 		if (allowedOrigins.indexOf(origin) === -1) {
 			const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
 			return callback(new Error(msg), false);
 		}
 		return callback(null, true);
 	},
-	optionsSuccessStatus: 200 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+	credentials: true,  // Allow credentials (cookies, authorization headers, etc.)
+	optionsSuccessStatus: 200  // To handle legacy browsers that choke on 204 responses
 };
 
 app.use(cors(corsOptions));
 
-app.options('*', cors(corsOptions)); // Enable pre-flight requests for all routes
+app.options('*', cors(corsOptions)); 
 
-app.use(
-	fileUpload({
-		useTempFiles: true,
-		tempFileDir: "/tmp",
-	})
-)
-//cloudinary connection
+// Other middlewares
+app.use(express.json());
+app.use(cookieParser());
+app.use(fileUpload({
+	useTempFiles: true,
+	tempFileDir: "/tmp",
+}));
+
+// Connect to Cloudinary
 cloudinaryConnect();
 
-//routes
+// Routes
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/profile", profileRoutes);
 
-//def route
+// Default route
 app.get("/", (req, res) => {
 	return res.json({
 		success: true,
@@ -69,6 +62,7 @@ app.get("/", (req, res) => {
 	});
 });
 
+// Start the server
 app.listen(PORT, () => {
-	console.log(`App is running at ${PORT}`)
-})
+	console.log(`App is running at ${PORT}`);
+});
