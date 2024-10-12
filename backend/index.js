@@ -17,8 +17,9 @@ database.connect();
 
 const allowedOrigins = [
 	'http://localhost:3000',  
-	'https://pro-links-frontend.vercel.app',  
-	'https://pro-links-frontend-7i0ducup1-vatsal-poddars-projects.vercel.app'
+	'https://pro-links.vercel.app/',
+	'https://pro-links-git-main-vatsal-poddars-projects.vercel.app/',  
+	'https://pro-links-bwzica3e3-vatsal-poddars-projects.vercel.app/'
 ];
 
 // CORS configuration
