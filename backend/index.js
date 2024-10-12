@@ -18,8 +18,6 @@ database.connect();
 const allowedOrigins = [
 	'http://localhost:3000',  
 	'https://pro-links.vercel.app/',
-	'https://pro-links-git-main-vatsal-poddars-projects.vercel.app/',  
-	'https://pro-links-4yx8li0lx-vatsal-poddars-projects.vercel.app/'
 ];
 
 // CORS configuration
@@ -32,6 +30,7 @@ const corsOptions = {
 		}
 		return callback(null, true);
 	},
+	methods: ['GET', 'POST', 'PUT', 'DELETE'],
 	credentials: true,  // Allow credentials (cookies, authorization headers, etc.)
 	optionsSuccessStatus: 200  // To handle legacy browsers that choke on 204 responses
 };
