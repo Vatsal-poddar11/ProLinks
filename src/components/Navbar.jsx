@@ -44,6 +44,11 @@ const Navbar = () => {
                         Contact
                     </p>
                 </NavLink> */}
+                <NavLink to="/metrics">
+                    <p className={`${ matchRoute("/metrics") ? "text-yellow-25" : "text-richblack-25"}`}>
+                        Metrics
+                    </p>
+                </NavLink>
             </div>
             
             <div className='flex gap-x-4 items-center'>

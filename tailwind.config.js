@@ -11,6 +11,12 @@ module.exports = {
       white: "#fff",
       black: "#000",
       transparent: "#ffffff00",
+      gold: '#FFD700',
+      darkSlateGray: '#2F4F4F',
+      lightCyan: '#E0FFFF',
+      steelBlue: '#4682B4',
+      tomato: '#FF6347',
+      darkSeaGreen: '#8FBC8F',
       richblack: {
         5: "#F1F2FF",
         25: "#DBDDEA",

@@ -9,6 +9,7 @@ import OpenRoute from './components/OpenRoute';
 import Dashboard from "./pages/Dashboard";
 import EditProfile from "./pages/EditProfile";
 import AllLinks from './pages/AllLinks';
+import Metrics from './pages/Metrics';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="dashboard" element={<Dashboard/>} />
         <Route path="edit" element={<EditProfile/>}/>
         <Route path="edit-links" element={<AllLinks/>} />
+        <Route path="metrics" element={<Metrics/>}/>
       </Routes>
     </div>
   );
